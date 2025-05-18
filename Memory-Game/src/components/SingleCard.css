@@ -1,0 +1,32 @@
+.card {
+    position: relative;
+    perspective: 1000px; /* Added for better 3D effect */
+}
+
+.card img {
+    width: 100%;
+    display: block;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    backface-visibility: hidden; /* Prevents flickering */
+}
+
+/* front of card - the picture */
+.card .front {
+    position: absolute;
+    transform: rotateY(90deg);
+    transition: transform 0.4s ease-in-out;
+}
+
+.flipped .front {
+    transform: rotateY(0deg);
+}
+
+/* back of card - cover */
+.card .back {
+    transition: transform 0.4s ease-in-out;
+}
+
+.flipped .back {
+    transform: rotateY(90deg);
+}
